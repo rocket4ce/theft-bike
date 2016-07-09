@@ -1,4 +1,5 @@
 class BikeController < ApplicationController
+  before_action :authenticate_user!
   def all
     @bikes = Bike.all
   end
