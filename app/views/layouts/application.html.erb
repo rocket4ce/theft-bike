@@ -8,15 +8,9 @@
 </head>
 <body>
 <%= render 'layouts/nav' %>
-
 <br>
 <br>
 <br>
-<% if user_signed_in? %>
-  hola <%= current_user.email %>
-<% else  %>
-  logueate
-<% end  %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <div class="container">

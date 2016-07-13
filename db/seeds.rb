@@ -3,5 +3,17 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.create({email: "rocket4ce@gmail.com", password:'123456' })
+
+10.times do |n|
+  b = Bike.new
+  b.color = "rojo"
+  b.brand = "oxford-#{n}"
+  b.ring = 20
+  b.description = "lorem ipsum"
+  b.photo = "bike.jpg"
+  b.user_id = 1
+  b.save
+  puts b
+end
