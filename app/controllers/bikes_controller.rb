@@ -16,7 +16,7 @@ class BikesController < ApplicationController
   end
 
   def update
-    if @bike.update
+    if @bike.update(enviar_parametros)
       render :new , notice: "haz editado la bicicleta"
     else
       render :index
