@@ -6,7 +6,7 @@ class BikesController < ApplicationController
   end
 
   def new
-    @bike = Bike.new
+    @bike = current_user.bikes.new
   end
 
   def show
@@ -17,16 +17,16 @@ class BikesController < ApplicationController
 
   def update
     if @bike.update
-      redirect_to '/bike/new' , notice: "haz creado una bici"
+      render :new , notice: "haz editado la bicicleta"
     else
       render :index
     end
   end
 
-  def created
-    @bike = Bike.new(enviar_parametros)
+  def create
+    @bike = current_user.bikes.new(enviar_parametros)
     if @bike.save
-      redirect_to '/bike/new' , notice: "haz creado una bici"
+      render :new , notice: "haz creado una bici"
     else
       render :new
     end

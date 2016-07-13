@@ -1,0 +1,26 @@
+<%= form_for @bike do |f| %>
+<% if @bike.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bike.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @bike.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %>
+  <%= f.label :ring %>
+  <%= f.text_field :ring %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :photo %>
+  <%= f.text_field :photo %>
+  <%= f.label :user_id %>
+  <%= f.text_field :user_id %>
+  <%= f.submit %>
+<% end %>
