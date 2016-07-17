@@ -1,11 +1,14 @@
 <h1>hola cabros</h1>
-<% @bikes.each do |b| %>
-  <ul>
-    <li><%= b.color %></li>
-    <li><%= b.description %></li>
-    <li><%= b.ring %></li>
-    <li><%= b.photo %></li>
-    <li><%= b.brand %></li>
-  </ul>
-
+<% if @bikes.count == 0 %>
+  <%= link_to "Ingresa una bicicleta", new_bike_path %>
+<% else  %>
+  <% @bikes.each do |b| %>
+    <ul>
+      <li><%= b.color %></li>
+      <li><%= b.description %></li>
+      <li><%= b.ring %></li>
+      <li><%= b.photo %></li>
+      <li><%= b.brand %></li>
+    </ul>
+  <% end %>
 <% end %>

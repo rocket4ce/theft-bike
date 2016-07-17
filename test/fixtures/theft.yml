@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  bike_id: 
+  data_theft: 
+  address: MyString
+  state: false
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  user_id: 
+  bike_id: 
+  data_theft: 
+  address: MyString
+  state: false
+  latitude: 1.5
+  longitude: 1.5

@@ -12,12 +12,17 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
             <% if user_signed_in? %>
+              <li>
+                <%= link_to "mis bicicletas", bikes_path %>
+              </li>
               <li>
                 <a href="#">
                   hola: <%= current_user.email %>
                 </a>
+              </li>
+              <li>
+                <%= link_to 'Cerrar sesión', destroy_user_session_path, method: 'delete' %>
               </li>
             <% else  %>
               <li class="dropdown">

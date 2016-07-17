@@ -4,7 +4,8 @@
 # Examples:
 #
 
-User.create({email: "rocket4ce@gmail.com", password:'123456' })
+User.create({email: "rocket4ce@gmail.com", password:'123456', username: 'rocket4ce dinko esta pelado', avatar: 'avatar.jpg' })
+User.create({email: "rocket4cea@gmail.com", password:'123456', username: 'rocket4ce dinko esta peladó', avatar: 'avatar.jpg' })
 
 10.times do |n|
   b = Bike.new
