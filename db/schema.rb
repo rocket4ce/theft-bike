@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160717000902) do
+ActiveRecord::Schema.define(version: 20160723011635) do
 
   create_table "bikes", force: :cascade do |t|
     t.string   "color"
@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20160717000902) do
     t.integer  "ring"
     t.text     "description"
     t.string   "photo"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "user_id"
+    t.boolean  "state",       default: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -42,11 +43,10 @@ ActiveRecord::Schema.define(version: 20160717000902) do
     t.integer  "bike_id"
     t.datetime "time_theft"
     t.string   "address"
-    t.boolean  "state",      default: true
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "theft", ["bike_id"], name: "index_theft_on_bike_id"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20160717000902) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "role",                   default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

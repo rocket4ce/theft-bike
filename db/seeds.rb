@@ -18,3 +18,19 @@ User.create({email: "rocket4cea@gmail.com", password:'123456', username: 'rocket
   b.save
   puts b
 end
+
+5.times do |n|
+  e = Bike.new
+  e.color = "rojos-#{n}"
+  e.brand = "oxfords-#{n}"
+  e.ring = 20
+  e.description = "loremss ipsum"
+  e.photo = "bikesss.jpg"
+  e.user_id = 2
+  e.save
+   if e.errors.any?
+     e.errors.full_messages.each do |message|
+       puts message
+     end
+   end
+end

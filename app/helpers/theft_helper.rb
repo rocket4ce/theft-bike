@@ -1,0 +1,2 @@
+module TheftHelper
+end

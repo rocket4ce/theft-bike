@@ -15,5 +15,8 @@ class User < ActiveRecord::Base
   #Validaciones
   validates :username, uniqueness: true
   #asociaciones
+  #theft = robos
+  #stole = robo
   has_many :bikes
+  has_many :theft
 end

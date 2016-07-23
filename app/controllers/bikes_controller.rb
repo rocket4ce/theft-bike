@@ -1,5 +1,6 @@
 class BikesController < ApplicationController
   before_action :authenticate_user!
+  before_action :admin
   before_action :set_bike, only:[:show, :edit, :update]
   def index
     @bikes = current_user.bikes
@@ -10,6 +11,7 @@ class BikesController < ApplicationController
   end
 
   def show
+    @stole = Stole.new
   end
 
   def edit

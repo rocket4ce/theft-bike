@@ -1,0 +1,8 @@
+<h1>Esta bici te la robaron?</h1>
+<%= form_for([@bike, @theft]) do |f| %>
+	<%= f.label :address %>
+	<%= f.text_field :address, class: "form-control" %>
+	<%= f.label :time_theft %>
+	<%= f.datetime_local_field :time_theft, class: "form-control" %>
+	<%= f.submit %>
+<% end %>

@@ -4,11 +4,15 @@
 <% else  %>
   <% @bikes.each do |b| %>
     <ul>
+      <li><%= b.id %></li>
       <li><%= b.color %></li>
       <li><%= b.description %></li>
       <li><%= b.ring %></li>
       <li><%= b.photo %></li>
       <li><%= b.brand %></li>
+      <li>
+        <%= link_to 'Detalle de Robo', bike_path(b)  %>
+      </li>
     </ul>
   <% end %>
 <% end %>
