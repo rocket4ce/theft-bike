@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723011635) do
+ActiveRecord::Schema.define(version: 20160723225955) do
+
+  create_table "avistamientos", force: :cascade do |t|
+    t.integer  "bike_id"
+    t.string   "photo"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "avistamientos", ["bike_id"], name: "index_avistamientos_on_bike_id"
+  add_index "avistamientos", ["user_id"], name: "index_avistamientos_on_user_id"
 
   create_table "bikes", force: :cascade do |t|
     t.string   "color"

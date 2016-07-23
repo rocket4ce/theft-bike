@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   #asociaciones
   #theft = robos
   #stole = robo
-  has_many :bikes
-  has_many :theft
+  has_many :bikes, dependent: :destroy
+  has_many :avistamientos, dependent: :destroy
+  has_many :theft, dependent: :destroy
 end

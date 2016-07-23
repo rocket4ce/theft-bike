@@ -10,6 +10,7 @@ class Bike < ActiveRecord::Base
   #asociaciones
   #theft = robos
   #stole = robo
+  has_many :avistamientos, dependent: :destroy
   belongs_to :user
-  has_many :theft
+  has_many :theft, dependent: :destroy
 end

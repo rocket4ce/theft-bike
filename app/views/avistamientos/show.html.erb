@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bike:</strong>
+  <%= @avistamiento.bike %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @avistamiento.photo %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @avistamiento.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @avistamiento.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @avistamiento.longitude %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @avistamiento.user %>
+</p>
+
+<%= link_to 'Edit', edit_avistamiento_path(@avistamiento) %> |
+<%= link_to 'Back', avistamientos_path %>

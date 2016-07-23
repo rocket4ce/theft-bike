@@ -1,12 +1,12 @@
 class TheftController < ApplicationController
-  before_action :enviar_bici, only: [:new, :create]
+  before_action :authenticate_user!
+  before_action :enviar_bici, only: [:new, :create, :update]
   def new
     @theft = current_user.theft.new
   end
   def create
     @stole = current_user.theft.new(enviar_parametros)
     @stole.bike_id = @bike
-    puts @stole
     if @stole.save
       redirect_to root_path, notice: 'Creaste un robo'
     else
@@ -18,6 +18,12 @@ class TheftController < ApplicationController
   end
 
   private
+
+  # def seguridad_bici_usuario(bike)
+  #   unless current_user.bikes.include?(bike)
+  #     redirect_to new_bike_stole_path, notice: 'Esta no es tu bicicleta ctm!!'
+  #   end
+  # end
 
   def enviar_bici
     @bike = Bike.find(params[:bike_id])
