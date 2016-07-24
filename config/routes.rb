@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :avistamientos
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
 
     root 'welcome#index'
     resources :bikes do
+      resources :avistamientos
       resources :theft, only: [:new, :create, :update]
     end
 

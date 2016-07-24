@@ -8,6 +8,7 @@ class TheftController < ApplicationController
     @stole = current_user.theft.new(enviar_parametros)
     @stole.bike_id = @bike
     if @stole.save
+      @bike.update(state: true)
       redirect_to root_path, notice: 'Creaste un robo'
     else
       render new_bike_stole(@stole.bike)

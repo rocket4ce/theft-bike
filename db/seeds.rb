@@ -34,3 +34,7 @@ end
      end
    end
 end
+
+Stole.create({user_id: 1, bike_id: 2, time_theft: Time.now, address: 'Juan cisternas 1960, la serena' })
+
+Avistamiento.create({ user_id: 2, stole_id: 1 , bike_id: 2, photo: 'photo.jpg' ,fecha_avistamiento: DateTime.now + 1.day, address: 'Juan cisternas 1200, la serena' })

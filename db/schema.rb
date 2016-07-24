@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723225955) do
+ActiveRecord::Schema.define(version: 20160724001237) do
 
   create_table "avistamientos", force: :cascade do |t|
     t.integer  "bike_id"
@@ -20,11 +20,14 @@ ActiveRecord::Schema.define(version: 20160723225955) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.datetime "fecha_avistamiento"
+    t.integer  "stole_id"
   end
 
   add_index "avistamientos", ["bike_id"], name: "index_avistamientos_on_bike_id"
+  add_index "avistamientos", ["stole_id"], name: "index_avistamientos_on_stole_id"
   add_index "avistamientos", ["user_id"], name: "index_avistamientos_on_user_id"
 
   create_table "bikes", force: :cascade do |t|

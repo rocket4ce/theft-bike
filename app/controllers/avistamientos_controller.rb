@@ -1,5 +1,7 @@
 class AvistamientosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_avistamiento, only: [:show, :edit, :update, :destroy]
+  before_action :enviar_bici
 
   # GET /avistamientos
   # GET /avistamientos.json
@@ -63,6 +65,9 @@ class AvistamientosController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def enviar_bici
+      @bike = Bike.find(params[:bike_id])
+    end
     def set_avistamiento
       @avistamiento = Avistamiento.find(params[:id])
     end
